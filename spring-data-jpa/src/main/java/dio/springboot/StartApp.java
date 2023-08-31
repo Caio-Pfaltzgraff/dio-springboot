@@ -12,7 +12,7 @@ public class StartApp implements CommandLineRunner {
     private UserRepository repository;
     @Override
     public void run(String... args) throws Exception {
-        repository.save(new User(1, "Caio", "kakaio04", "1234"));
+        repository.save(new User(null, "Ruan", "rubrabo16", "4321"));
 
         for (User u: repository.findAll()) {
             System.out.println(u);
