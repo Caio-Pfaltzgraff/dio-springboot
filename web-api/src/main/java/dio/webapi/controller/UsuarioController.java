@@ -20,17 +20,22 @@ public class UsuarioController {
     }
 
     @GetMapping("/{username}")
-    public Usuario getOne(@PathVariable("username") String username) {
+    public Usuario getOneUser(@PathVariable("username") String username) {
         return repository.findByUsername(username);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public void deleteUser(@PathVariable("id") Integer id) {
         repository.deleteById(id);
     }
 
     @PostMapping
     public void postUser(@RequestBody Usuario usuario) {
+        repository.save(usuario);
+    }
+
+    @PutMapping
+    public void putUser(@RequestBody Usuario usuario) {
         repository.save(usuario);
     }
 }
